@@ -1,18 +1,16 @@
 const path = require("path");
-const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+
 module.exports = {
-  entry: fs
-    .readdirSync("./src/assets/js")
-    .map((file) => path.resolve("./src/assets/js", file)),
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
+    chunkFilename: '[name].[contenthash].js'
   },
   plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/templates/index.pug",
     }),

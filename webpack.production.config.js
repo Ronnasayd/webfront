@@ -2,12 +2,15 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.common.config");
 const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const purgecss = require("@fullhuman/postcss-purgecss")
+const cssnano = require("cssnano")
 
 const production = {
   mode: "production",
+  entry:"./src/production.js",
   plugins: [
     new HtmlWebpackTagsPlugin({
-      tags: ["core.css", "tailwind.css"],
+      tags: ["tailwind.css","core.css"],
       append: true,
     }),
   ],
@@ -34,10 +37,10 @@ const production = {
             options: {
               postcssOptions: {
                 plugins: [
-                  require("@fullhuman/postcss-purgecss")({
+                  purgecss({
                     content: ["src/templates/**/*.pug"],
                   }),
-                  require("cssnano")({ preset: "default" }),
+                  cssnano({ preset: "default" }),
                 ],
               },
             },
@@ -60,10 +63,10 @@ const production = {
             options: {
               postcssOptions: {
                 plugins: [
-                  require("@fullhuman/postcss-purgecss")({
+                  purgecss({
                     content: ["src/templates/**/*.pug"],
                   }),
-                  require("cssnano")({ preset: "default" }),
+                  cssnano({ preset: "default" }),
                 ],
               },
             },

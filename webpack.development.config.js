@@ -3,9 +3,12 @@ const common = require("./webpack.common.config");
 
 const development = {
   mode: "development",
+  entry:"./src/development.js",
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
+    hot:true,
+    inline:true
   },
   module: {
     rules: [
@@ -15,18 +18,7 @@ const development = {
       },
       {
         test: /\.css$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                config: true,
-              },
-            },
-          },
-        ],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
