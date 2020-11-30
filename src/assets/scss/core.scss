@@ -1,0 +1,8 @@
+@import "./functions";
+@import "./mixins";
+@import "./variables";
+@import "./reset";
+
+:root {
+  font-size: $root-size;
+}
