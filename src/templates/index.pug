@@ -5,5 +5,19 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title WebFront
   body
-    .flex.h-screen.items-center.justify-center.text-6xl.bg-purple-700
-      h1.text-white Hello world
+    .grid.h-screen.wrapper
+      section.sidebar.row-span-2.col-span-1.bg-gray-500
+      section.menu.flex.justify-between.row-span-1.col-span-1.bg-gray-400
+        .menu__nav.flex.items-center.h-full.pl-6
+          img.menu__nav__left.mx-2.p-1.bg-gray-700.rounded-full(src="../assets/images/arrow-left.svg")
+          img.menu__nav__right.mx-2.p-1.bg-gray-700.rounded-full(src="../assets/images/arrow-right.svg")
+        .menu__content.flex.items-center.pr-6
+          a.menu__content__upgrade.mx-3.text-sm.text-white.border-2.border-white.border-solid.rounded-full.py-2.px-10(href="#") FAÇA UPGRADE
+          nav.menu__content__search.mx-3
+            div Ronnasayd
+            //- ul
+            //-   li Conta
+            //-   li Perfil
+            //-   li Sair
+      section.content.row-span-1.col-span-1.bg-gray-300
+      section.player.row-span-1.col-span-2.bg-gray-600

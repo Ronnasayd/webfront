@@ -10,7 +10,7 @@ const production = {
   entry:"./src/production.js",
   plugins: [
     new HtmlWebpackTagsPlugin({
-      tags: ["tailwind.css","core.css"],
+      tags: ["assets/css/tailwind.css","assets/css/core.css"],
       append: true,
     }),
   ],
@@ -27,6 +27,7 @@ const production = {
             loader: "file-loader",
             options: {
               name: "[name].css",
+              outputPath:"assets/css"
             },
           },
           "extract-loader",
@@ -54,6 +55,7 @@ const production = {
             loader: "file-loader",
             options: {
               name: "[name].css",
+              outputPath:"assets/css"
             },
           },
           "extract-loader",

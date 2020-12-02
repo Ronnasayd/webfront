@@ -6,6 +6,8 @@
 :root {
   font-size: $root-size;
 }
-body {
-  margin: 0 Rem(100px);
+
+.wrapper{
+  grid-template-columns: Rem(232px) 1fr;
+  grid-template-rows: Rem(60px) 1fr Rem(90px);
 }

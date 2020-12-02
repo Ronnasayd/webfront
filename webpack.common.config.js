@@ -7,7 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
-    chunkFilename: '[name].[contenthash].js'
+    chunkFilename: '[name].[contenthash].js',
+    publicPath: '',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -30,6 +31,13 @@ module.exports = {
       {
         test: /\.pug$/,
         use: ["html-loader", "pug-html-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[hash][ext][query]'
+        }
       },
     ],
   },
