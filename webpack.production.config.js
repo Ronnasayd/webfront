@@ -34,7 +34,7 @@ const production = {
             loader: "file-loader",
             options: {
               name: "[name].css",
-              outputPath:"../css"
+              outputPath:"assets/css"
             },
           },
           "extract-loader",
@@ -62,7 +62,7 @@ const production = {
             loader: "file-loader",
             options: {
               name: "[name].css",
-              outputPath:"../css"
+              outputPath:"assets/css"
             },
           },
           "extract-loader",
