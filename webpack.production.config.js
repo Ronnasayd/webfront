@@ -12,11 +12,18 @@ const production = {
     new HtmlWebpackTagsPlugin({
       tags: ["assets/css/tailwind.css","assets/css/core.css"],
       append: true,
+      usePublicPath: false,
     }),
   ],
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
+    runtimeChunk:{
+      name:'runtime'
+    },
+    splitChunks:{
+      chunks:'all'
+    }
   },
   module: {
     rules: [
@@ -27,7 +34,7 @@ const production = {
             loader: "file-loader",
             options: {
               name: "[name].css",
-              outputPath:"assets/css"
+              outputPath:"../css"
             },
           },
           "extract-loader",
@@ -55,7 +62,7 @@ const production = {
             loader: "file-loader",
             options: {
               name: "[name].css",
-              outputPath:"assets/css"
+              outputPath:"../css"
             },
           },
           "extract-loader",

@@ -5,15 +5,16 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist/assets/js"),
     filename: "[name].[contenthash].js",
     chunkFilename: '[name].[contenthash].js',
-    publicPath: '',
+    publicPath: 'assets/js/',
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/templates/index.pug",
+      filename:"../../index.html"
     }),
   ],
   module: {
@@ -34,10 +35,16 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'assets/images/[hash][ext][query]'
-        }
+        use:[
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[contenthash].[ext]",
+              outputPath:"../images",
+              publicPath: 'assets/images',
+            },
+          },
+        ],
       },
     ],
   },

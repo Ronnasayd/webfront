@@ -8,24 +8,25 @@
 }
 
 .wrapper{
-  grid-template-columns: Rem(232px) 1fr;
-  grid-template-rows: Rem(60px) 1fr Rem(90px);
+  grid-template-columns: Rem(232) 1fr;
+  grid-template-rows: Rem(60) 1fr Rem(90);
 }
 
-.menu__nav__left,.menu__nav__right{
-  width:Rem(30px);
-  height:Rem(30px);
-  padding:Rem(7px);
+.menu{
+  &__nav__left,&__nav__right{
+    width:Rem(30);
+    height:Rem(30);
+    padding:Rem(8);
+  }
 }
 
 .sidebar{
   display: grid;
-  grid-template-rows: Rem(350px) auto Rem(44px);
+  grid-template-rows: Rem(350) auto Rem(44);
 }
 
 .spotify-logo{
-  width: 100%;
-    height: Rem(45px);
-    max-width: Rem(150px);
-    color:#fff;    
+    width: 100%;
+    height: Rem(45);
+    max-width: Rem(150);   
 }
