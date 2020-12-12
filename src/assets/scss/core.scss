@@ -3,8 +3,18 @@
 @import "./variables";
 @import "./reset";
 
+@font-face{
+  font-family: "Spotify";
+  src: url("https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Book.3466e0ec.woff2")format("woff2"),
+  url("https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Bold.8d0a45cc.woff2")format("woff2"),
+  url("https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Light.afd9ab26.woff2")format("woff2")
+}
+
 :root {
   font-size: $root-size;
+}
+body{
+  font-family: "Spotify",sans-serif;
 }
 
 .wrapper{
@@ -29,4 +39,22 @@
     width: 100%;
     height: Rem(45);
     max-width: Rem(150);   
+}
+
+.plus-icon{
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.heart-wrapper{
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg,#450af5,#c4efd9);
+  padding:4px;
+  display: grid;
+  place-items: center;
+  color: #fff;
 }
