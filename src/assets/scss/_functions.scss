@@ -1,7 +1,7 @@
 @import './variables';
 
-@function Rem($size) {
-  $remSize: ($size + 0) / $root-size;
+@function remsize($size) {
+  $remSize: ($size * 1px) / $root-size;
 
   @return #{$remSize}rem;
 }

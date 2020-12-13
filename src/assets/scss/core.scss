@@ -5,6 +5,7 @@
 
 @font-face {
   font-family: 'Spotify';
+  /* stylelint-disable indentation */
   src: url('https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Book.3466e0ec.woff2')
       format('woff2'),
     url('https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Bold.8d0a45cc.woff2')
@@ -22,28 +23,26 @@ body {
 }
 
 .wrapper {
-  grid-template-columns: rem(232) 1fr;
-  grid-template-rows: rem(60) 1fr rem(90);
+  grid-template-columns: remsize(232) 1fr;
+  grid-template-rows: remsize(60) 1fr remsize(90);
 }
 
 .menu {
   &__nav__left,
   &__nav__right {
-    width: rem(30);
-    height: rem(30);
-    padding: rem(8);
+    width: remsize(30);
+    height: remsize(30);
+    padding: remsize(8);
   }
 }
 
 .sidebar {
   display: grid;
-  grid-template-rows: rem(350) auto rem(44);
+  grid-template-rows: remsize(350) auto remsize(44);
 }
 
-.spotify-logo {
-  width: 100%;
-  height: rem(45);
-  max-width: rem(150);
+.logo {
+  width: remsize(140);
 }
 
 .plus-icon {
