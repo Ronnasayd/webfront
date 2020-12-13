@@ -1,47 +1,52 @@
-@import "./functions";
-@import "./mixins";
-@import "./variables";
-@import "./reset";
+@import './functions';
+@import './mixins';
+@import './variables';
+@import './reset';
 
-@font-face{
-  font-family: "Spotify";
-  src: url("https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Book.3466e0ec.woff2")format("woff2"),
-  url("https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Bold.8d0a45cc.woff2")format("woff2"),
-  url("https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Light.afd9ab26.woff2")format("woff2")
+@font-face {
+  font-family: 'Spotify';
+  src: url('https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Book.3466e0ec.woff2')
+      format('woff2'),
+    url('https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Bold.8d0a45cc.woff2')
+      format('woff2'),
+    url('https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Light.afd9ab26.woff2')
+      format('woff2');
 }
 
 :root {
   font-size: $root-size;
 }
-body{
-  font-family: "Spotify",sans-serif;
+
+body {
+  font-family: 'Spotify', sans-serif;
 }
 
-.wrapper{
-  grid-template-columns: Rem(232) 1fr;
-  grid-template-rows: Rem(60) 1fr Rem(90);
+.wrapper {
+  grid-template-columns: rem(232) 1fr;
+  grid-template-rows: rem(60) 1fr rem(90);
 }
 
-.menu{
-  &__nav__left,&__nav__right{
-    width:Rem(30);
-    height:Rem(30);
-    padding:Rem(8);
+.menu {
+  &__nav__left,
+  &__nav__right {
+    width: rem(30);
+    height: rem(30);
+    padding: rem(8);
   }
 }
 
-.sidebar{
+.sidebar {
   display: grid;
-  grid-template-rows: Rem(350) auto Rem(44);
+  grid-template-rows: rem(350) auto rem(44);
 }
 
-.spotify-logo{
-    width: 100%;
-    height: Rem(45);
-    max-width: Rem(150);   
+.spotify-logo {
+  width: 100%;
+  height: rem(45);
+  max-width: rem(150);
 }
 
-.plus-icon{
+.plus-icon {
   width: 32px;
   height: 32px;
   background: #fff;
@@ -49,11 +54,11 @@ body{
   flex-shrink: 0;
 }
 
-.heart-wrapper{
+.heart-wrapper {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg,#450af5,#c4efd9);
-  padding:4px;
+  background: linear-gradient(135deg, #450af5, #c4efd9);
+  padding: 4px;
   display: grid;
   place-items: center;
   color: #fff;
