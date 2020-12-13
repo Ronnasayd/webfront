@@ -1,28 +1,28 @@
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common.config");
-const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const purgecss = require("@fullhuman/postcss-purgecss")
-const cssnano = require("cssnano")
+const { merge } = require('webpack-merge')
+const common = require('./webpack.common.config')
+const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const purgecss = require('@fullhuman/postcss-purgecss')
+const cssnano = require('cssnano')
 
 const production = {
-  mode: "production",
-  entry:"./src/production.js",
+  mode: 'production',
+  entry: './src/production.js',
   plugins: [
     new HtmlWebpackTagsPlugin({
-      tags: ["assets/css/tailwind.css","assets/css/core.css"],
+      tags: ['assets/css/tailwind.css', 'assets/css/core.css'],
       append: true,
-      usePublicPath: false,
-    }),
+      usePublicPath: false
+    })
   ],
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
-    runtimeChunk:{
-      name:'runtime'
+    runtimeChunk: {
+      name: 'runtime'
     },
-    splitChunks:{
-      chunks:'all'
+    splitChunks: {
+      chunks: 'all'
     }
   },
   module: {
@@ -31,59 +31,59 @@ const production = {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "[name].css",
-              outputPath:"assets/css"
-            },
+              name: '[name].css',
+              outputPath: 'assets/css'
+            }
           },
-          "extract-loader",
-          "css-loader",
-          "sass-loader",
+          'extract-loader',
+          'css-loader',
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [
                   purgecss({
-                    content: ["src/templates/**/*.pug"],
+                    content: ['src/templates/**/*.pug']
                   }),
-                  cssnano({ preset: "default" }),
-                ],
-              },
-            },
+                  cssnano({ preset: 'default' })
+                ]
+              }
+            }
           },
-        ],
+          'sass-loader'
+        ]
       },
       {
         test: /\.css$/i,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "[name].css",
-              outputPath:"assets/css"
-            },
+              name: '[name].css',
+              outputPath: 'assets/css'
+            }
           },
-          "extract-loader",
-          "css-loader",
+          'extract-loader',
+          'css-loader',
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [
                   purgecss({
-                    content: ["src/templates/**/*.pug"],
+                    content: ['src/templates/**/*.pug']
                   }),
-                  cssnano({ preset: "default" }),
-                ],
-              },
-            },
-          },
-        ],
-      },
-    ],
-  },
-};
+                  cssnano({ preset: 'default' })
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
 
-module.exports = merge(production, common);
+module.exports = merge(production, common)
