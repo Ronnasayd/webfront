@@ -38,7 +38,7 @@ body {
 
 .sidebar {
   display: grid;
-  grid-template-rows: remsize(350) auto remsize(44);
+  grid-template-rows: remsize(360) auto remsize(40);
 }
 
 .logo {
@@ -61,4 +61,13 @@ body {
   display: grid;
   place-items: center;
   color: #fff;
+}
+
+.h-11_5 {
+  height: remsize(42);
+}
+
+.delimiter {
+  height: remsize(0.1);
+  background: rgba(255, 255, 255, 0.5);
 }
