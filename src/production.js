@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css'
+import './assets/css/tailwindcss.css'
 import './assets/scss/core.scss'
 
-import(/* webpackChunkName: "index" */ './assets/js/index.js')
+import './assets/js/index.js'

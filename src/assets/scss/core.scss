@@ -67,7 +67,23 @@ body {
   height: remsize(42);
 }
 
+.h-9_5 {
+  height: remsize(38);
+}
+
 .delimiter {
   height: remsize(0.1);
   background: rgba(255, 255, 255, 0.5);
+}
+
+.item-border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#dropdown-menu {
+  display: none;
+
+  &[display='true'] {
+    display: block;
+  }
 }

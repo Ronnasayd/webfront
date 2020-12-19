@@ -14,7 +14,7 @@ const development = {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader","sass-loader"],
       },
       {
         test: /\.css$/i,

@@ -3,6 +3,7 @@ const common = require('./webpack.common.config')
 const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const purgecss = require('@fullhuman/postcss-purgecss')
+const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 
 const production = {
@@ -47,6 +48,7 @@ const production = {
                   purgecss({
                     content: ['src/templates/**/*.pug']
                   }),
+                  autoprefixer(),
                   cssnano({ preset: 'default' })
                 ]
               }
@@ -75,6 +77,7 @@ const production = {
                   purgecss({
                     content: ['src/templates/**/*.pug']
                   }),
+                  autoprefixer(),
                   cssnano({ preset: 'default' })
                 ]
               }
