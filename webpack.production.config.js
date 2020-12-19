@@ -6,12 +6,23 @@ const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 
+const postCSSPlugins = [
+  purgecss({
+    content: ['src/templates/**/*.pug'],
+    safelist: {
+      greedy: [/dropdown-menu/]
+    }
+  }),
+  autoprefixer(),
+  cssnano({ preset: 'default' })
+]
+
 const production = {
   mode: 'production',
   entry: './src/production.js',
   plugins: [
     new HtmlWebpackTagsPlugin({
-      tags: ['assets/css/tailwind.css', 'assets/css/core.css'],
+      tags: ['assets/css/tailwindcss.css', 'assets/css/core.css'],
       append: true,
       usePublicPath: false
     })
@@ -44,13 +55,7 @@ const production = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  purgecss({
-                    content: ['src/templates/**/*.pug']
-                  }),
-                  autoprefixer(),
-                  cssnano({ preset: 'default' })
-                ]
+                plugins: [...postCSSPlugins]
               }
             }
           },
@@ -73,13 +78,7 @@ const production = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  purgecss({
-                    content: ['src/templates/**/*.pug']
-                  }),
-                  autoprefixer(),
-                  cssnano({ preset: 'default' })
-                ]
+                plugins: [...postCSSPlugins]
               }
             }
           }

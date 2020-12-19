@@ -15,3 +15,4 @@ navContent.addEventListener(
   },
   false
 )
+// console.log(dropMenu)

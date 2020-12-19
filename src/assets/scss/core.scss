@@ -87,3 +87,21 @@ body {
     display: block;
   }
 }
+
+.card {
+  max-width: remsize(194);
+  overflow: hidden;
+
+  &__image {
+    width: remsize(162.8);
+    height: remsize(162.8);
+  }
+
+  &__content {
+    &__description {
+      line-height: remsize(16);
+      max-height: remsize(32);
+      overflow: hidden;
+    }
+  }
+}
