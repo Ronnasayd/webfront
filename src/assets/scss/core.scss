@@ -46,18 +46,18 @@ body {
 }
 
 .plus-icon {
-  width: 32px;
-  height: 32px;
+  width: remsize(32);
+  height: remsize(32);
   background: #fff;
-  padding: 4px;
+  padding: remsize(4);
   flex-shrink: 0;
 }
 
 .heart-wrapper {
-  width: 32px;
-  height: 32px;
+  width: remsize(32);
+  height: remsize(32);
   background: linear-gradient(135deg, #450af5, #c4efd9);
-  padding: 4px;
+  padding: remsize(4);
   display: grid;
   place-items: center;
   color: #fff;
@@ -77,15 +77,11 @@ body {
 }
 
 .item-border {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: remsize(1) solid rgba(0, 0, 0, 0.2);
 }
 
 #dropdown-menu {
   display: none;
-
-  &[display='true'] {
-    display: block;
-  }
 }
 
 .card {
@@ -104,4 +100,8 @@ body {
       overflow: hidden;
     }
   }
+}
+
+#dropdown-icon.rotate {
+  transform: rotate(180deg);
 }

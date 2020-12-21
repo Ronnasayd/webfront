@@ -1,22 +1,13 @@
-const $$ = string => {
-  const elements = [...document.querySelectorAll(string)]
-  if (elements) {
-    elements.forEach(element => {
-      element.on = (string, callback) => {
-        element.addEventListener(string, callback, false)
-      }
-    })
-  }
+import { $ } from './Rquery'
 
-  return elements.length === 1 ? elements[0] : elements
-}
+const dropMenu = $('#dropdown-menu')
+const navContent = $('.menu__content__nav')
+const dropIcon = $('#dropdown-icon')
 
-let showDropMenu = false
-const dropMenu = $$('#dropdown-menu')
-const navContent = $$('.menu__content__nav')
+let rotateIcon = false
 
-navContent.on('click', event => {
-  showDropMenu = !showDropMenu
-  dropMenu.setAttribute('display', showDropMenu)
+navContent.on('click', () => {
+  dropMenu.toggle()
+  rotateIcon = !rotateIcon
+  rotateIcon ? dropIcon.addClass('rotate') : dropIcon.removeClass('rotate')
 })
-// console.log(dropMenu)

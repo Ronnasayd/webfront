@@ -10,7 +10,7 @@ const postCSSPlugins = [
   purgecss({
     content: ['src/templates/**/*.pug'],
     safelist: {
-      greedy: [/dropdown-menu/]
+      greedy: [/dropdown-menu/, /dropdown-icon/]
     }
   }),
   autoprefixer(),
