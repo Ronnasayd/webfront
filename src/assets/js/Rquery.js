@@ -1,6 +1,9 @@
 export const $ = selector => {
   const self = {
-    elements: [...document.querySelectorAll(selector)],
+    elements:
+      typeof selector === 'string'
+        ? [...document.querySelectorAll(selector)]
+        : [selector],
     on: (event, callback) => {
       self.elements.forEach(element =>
         element.addEventListener(event, callback)
@@ -27,6 +30,12 @@ export const $ = selector => {
       } else {
         return self.elements[0].getAttribute(key)
       }
+      return self
+    },
+    removeAttr: key => {
+      self.elements.forEach(element => {
+        element.removeAttribute(key)
+      })
       return self
     },
     toggle: () => {

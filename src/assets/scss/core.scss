@@ -39,6 +39,10 @@ body {
 .sidebar {
   display: grid;
   grid-template-rows: remsize(360) auto remsize(40);
+
+  &__item[selected='true'] {
+    background: #aaa;
+  }
 }
 
 .logo {
