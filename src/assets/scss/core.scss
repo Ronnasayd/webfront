@@ -25,6 +25,11 @@ body {
 .wrapper {
   grid-template-columns: remsize(232) 1fr;
   grid-template-rows: remsize(60) 1fr remsize(90);
+
+  @include media-sm {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .menu {
@@ -34,11 +39,25 @@ body {
     height: remsize(30);
     padding: remsize(8);
   }
+
+  &__content__upgrade {
+    @include media-sm {
+      display: none;
+    }
+  }
+
+  @include media-sm {
+    min-height: 64px;
+  }
 }
 
 .sidebar {
   display: grid;
   grid-template-rows: remsize(360) auto remsize(40);
+
+  @include media-sm {
+    display: none;
+  }
 
   &__item[selected='true'] {
     background: #aaa;
@@ -91,6 +110,7 @@ body {
 .card {
   max-width: remsize(194);
   overflow: hidden;
+  margin: remsize(10);
 
   &__image {
     width: remsize(162.8);
@@ -108,4 +128,10 @@ body {
 
 #dropdown-icon.rotate {
   transform: rotate(180deg);
+}
+
+ul.content {
+  @include media-sm {
+    justify-content: center;
+  }
 }
