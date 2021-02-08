@@ -19,7 +19,7 @@ const postCSSPlugins = [
 
 const production = {
   mode: 'production',
-  entry: './src/production.js',
+  entry: './src/app.js',
   plugins: [
     new HtmlWebpackTagsPlugin({
       tags: ['assets/css/tailwindcss.css', 'assets/css/core.css'],

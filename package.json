@@ -48,6 +48,6 @@
   },
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
-    "start": "webpack serve --progress --config webpack.development.config.js"
+    "dev": "webpack serve --progress --config webpack.development.config.js"
   }
 }
