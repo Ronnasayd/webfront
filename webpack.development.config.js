@@ -6,9 +6,7 @@ const development = {
   entry: './src/app.js',
   devtool: 'eval',
   devServer: {
-    contentBase: './dist',
-    hot: true,
-    inline: true
+    contentBase: './dist'
   },
   module: {
     rules: [
