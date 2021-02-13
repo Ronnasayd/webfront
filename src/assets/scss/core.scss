@@ -26,7 +26,7 @@ body {
   grid-template-columns: remsize(232) 1fr;
   grid-template-rows: remsize(60) 1fr remsize(90);
 
-  @include media-sm {
+  @media screen and (max-width: remsize(770)) {
     display: flex;
     flex-direction: column;
   }
@@ -41,21 +41,25 @@ body {
   }
 
   &__content__upgrade {
-    @include media-sm {
+    @media screen and (max-width: remsize(770)) {
       display: none;
     }
   }
 
-  @include media-sm {
+  @media screen and (max-width: remsize(770)) {
     min-height: 64px;
   }
+}
+
+.player {
+  min-height: remsize(90);
 }
 
 .sidebar {
   display: grid;
   grid-template-rows: remsize(360) auto remsize(40);
 
-  @include media-sm {
+  @media screen and (max-width: remsize(770)) {
     display: none;
   }
 
@@ -107,31 +111,29 @@ body {
   display: none;
 }
 
-.card {
-  max-width: remsize(194);
-  overflow: hidden;
-  margin: remsize(10);
+.card-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-gap: 16px;
 
-  &__image {
-    width: remsize(162.8);
-    height: remsize(162.8);
-  }
+  .card {
+    overflow: hidden;
 
-  &__content {
-    &__description {
-      line-height: remsize(16);
-      max-height: remsize(32);
-      overflow: hidden;
+    &__image {
+      width: 100%;
+      padding-top: 100%;
+    }
+
+    &__content {
+      &__description {
+        line-height: remsize(16);
+        max-height: remsize(32);
+        overflow: hidden;
+      }
     }
   }
 }
 
 #dropdown-icon.rotate {
   transform: rotate(180deg);
-}
-
-ul.content {
-  @include media-sm {
-    justify-content: center;
-  }
 }
