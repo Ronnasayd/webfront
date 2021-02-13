@@ -14,6 +14,24 @@
       format('woff2');
 }
 
+@font-face {
+  font-family: 'glue1-spoticon';
+  src: url(https://open.scdn.co/cdn/fonts/spoticon_regular_2.d319d911.woff2)
+      format('woff2'),
+    url(https://open.scdn.co/cdn/fonts/spoticon_regular_2.ff4c6091.woff)
+      format('woff'),
+    url(https://open.scdn.co/cdn/fonts/spoticon_regular_2.127670b5.ttf)
+      format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+[class*='spoticon-']::before {
+  font-family: 'glue1-spoticon';
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
   font-size: $root-size;
 }
@@ -47,12 +65,8 @@ body {
   }
 
   @media screen and (max-width: remsize(770)) {
-    min-height: 64px;
+    min-height: remsize(64);
   }
-}
-
-.player {
-  min-height: remsize(90);
 }
 
 .sidebar {
@@ -114,7 +128,7 @@ body {
 .card-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  grid-gap: 16px;
+  grid-gap: remsize(16);
 
   .card {
     overflow: hidden;
@@ -136,4 +150,51 @@ body {
 
 #dropdown-icon.rotate {
   transform: rotate(180deg);
+}
+
+.player {
+  min-height: remsize(90);
+
+  &__left {
+    width: 30%;
+
+    &__thumb {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  &__center {
+    width: 40%;
+  }
+
+  &__right {
+    width: 30%;
+
+    .player__sound__slider {
+      width: 93px;
+    }
+
+    [class^='player__right__item'] {
+      height: 32px;
+      min-width: 32px;
+      display: grid;
+
+      & > * {
+        place-self: center;
+      }
+    }
+  }
+}
+
+.spoticon-queue::before {
+  content: '';
+  font-size: 16px;
+  -webkit-transform: translateX(-1px);
+  transform: translateX(-1px);
+}
+
+.spoticon-devices::before {
+  content: '';
+  font-size: 16px;
 }
