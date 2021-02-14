@@ -51,14 +51,14 @@ body {
 }
 
 .menu {
-  &__nav__left,
-  &__nav__right {
+  &__nav-left,
+  &__nav-right {
     width: remsize(30);
     height: remsize(30);
     padding: remsize(8);
   }
 
-  &__content__upgrade {
+  &__upgrade {
     @media screen and (max-width: remsize(770)) {
       display: none;
     }
@@ -138,12 +138,10 @@ body {
       padding-top: 100%;
     }
 
-    &__content {
-      &__description {
-        line-height: remsize(16);
-        max-height: remsize(32);
-        overflow: hidden;
-      }
+    &__description {
+      line-height: remsize(16);
+      max-height: remsize(32);
+      overflow: hidden;
     }
   }
 }
@@ -175,7 +173,7 @@ body {
       width: 93px;
     }
 
-    [class^='player__right__item'] {
+    & > [class^='player'] {
       height: 32px;
       min-width: 32px;
       display: grid;
