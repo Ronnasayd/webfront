@@ -50,7 +50,7 @@ html(lang='Pt-br')
             li.h-8.text-sm.leading-8 Funk
             li.h-8.text-sm.leading-8 Forró
             li.h-8.text-sm.leading-8 Descobertas da semana
-        .sidebar__app.text-white.px-6.text-sm.leading-10.font-bold.flex.items-center
+        .sidebar__app
           svg.mr-1(role='img', height='24', width='24', viewbox='0 0 24 24')
             path(
               d='M11.5 0C5.149 0 0 5.148 0 11.5 0 17.851 5.149 23 11.5 23S23 17.851 23 11.5C23 5.148 17.851 0 11.5 0zm0 22C5.71 22 1 17.29 1 11.5S5.71 1 11.5 1 22 5.71 22 11.5 17.29 22 11.5 22zm.499-6.842V5h-1v10.149l-3.418-3.975-.758.652 4.678 5.44 4.694-5.439-.757-.653-3.439 3.984z',
@@ -58,7 +58,7 @@ html(lang='Pt-br')
             )
 
           span Instalar aplicativo
-      section.menu.flex.justify-between.row-span-1.col-span-1.bg-gray-400
+      section.menu
         .menu__nav.flex.items-center.h-full.pl-6
           img.menu__nav-left.mx-2.p-1.bg-gray-700.rounded-full.cursor-pointer(
             src='../assets/images/left.svg'
@@ -89,7 +89,7 @@ html(lang='Pt-br')
               li.h-9_5.text-sm.px-3.leading-9 Conta
               li.h-9_5.text-sm.px-3.leading-9.item-border Perfil
               li.h-9_5.text-sm.px-3.leading-9 Sair
-      section.content.row-span-1.col-span-1.bg-gray-800.overflow-auto
+      section.content
         ul.px-8
           li.mt-4.mb-8
             h1.text-2xl.font-bold.text-white.mb-5 Atalhos
@@ -175,11 +175,11 @@ html(lang='Pt-br')
                 .card__content
                   .card__title.font-bold.mt-3.mb-1 Lorem ipsum dolor
                   .card__description.text-sm Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dolores itaque provident quos laudantium magni sapiente placeat, est ipsum quas! Officiis minus voluptatem ipsa qui quod minima saepe nisi! Quasi.
-      section.player.flex.row-span-1.col-span-2.bg-gray-600.px-4.items-center
+      section.player
         .player__left.flex.text-white.items-center
           .player__thumb.bg-gray-100
           .player__content(class='mx-3.5')
-            .player__title.text-sm Lorem, ipsum
+            .player__title.text-sm.font-bold Lorem, ipsum dolor
             .player__description.text-xs Lorem ipsum do
           .player__love-icon.w-8.h-8.grid
             svg.place-self-center.Svg-ulyrgf-0.hJgLcF(
@@ -204,12 +204,56 @@ html(lang='Pt-br')
                   fill-rule='nonzero'
                 )
                 path(d='M10 8h4v3h-4z')
-        .player__center.flex.justify-center
-          .player__controls
-          .player__timer-slider.flex.items-center
-            span.player__current-time 0:00
-            input.w-84(type='range', name='', value='0.5')
-            span.player__total-time 3:24
+        .player__center.flex.justify-center.items-center.flex-col
+          .player__controls.flex.items-center.mb-3.w-56.justify-between
+            button.w-8.h-8.rounded-full.grid
+              svg.place-self-center.Svg-ulyrgf-0.hJgLcF(
+                role='img',
+                height='16',
+                width='16',
+                viewbox='0 0 16 16'
+              )
+                path(
+                  d='M4.5 6.8l.7-.8C4.1 4.7 2.5 4 .9 4v1c1.3 0 2.6.6 3.5 1.6l.1.2zm7.5 4.7c-1.2 0-2.3-.5-3.2-1.3l-.6.8c1 1 2.4 1.5 3.8 1.5V14l3.5-2-3.5-2v1.5zm0-6V7l3.5-2L12 3v1.5c-1.6 0-3.2.7-4.2 2l-3.4 3.9c-.9 1-2.2 1.6-3.5 1.6v1c1.6 0 3.2-.7 4.2-2l3.4-3.9c.9-1 2.2-1.6 3.5-1.6z'
+                )
+            button.w-8.h-8.rounded-full.grid
+              svg.place-self-center.Svg-ulyrgf-0.hJgLcF(
+                role='img',
+                height='16',
+                width='16',
+                viewbox='0 0 16 16'
+              )
+                path(d='M13 2.5L5 7.119V3H3v10h2V8.881l8 4.619z')
+            button.w-8.h-8.rounded-full.bg-white.grid
+              svg.place-self-center.Svg-ulyrgf-0.hJgLcF(
+                role='img',
+                height='16',
+                width='16',
+                viewbox='0 0 16 16'
+              )
+                path(d='M4.018 14L14.41 8 4.018 2z')
+            button.w-8.h-8.rounded-full.grid
+              svg.place-self-center.Svg-ulyrgf-0.hJgLcF(
+                role='img',
+                height='16',
+                width='16',
+                viewbox='0 0 16 16'
+              )
+                path(d='M11 3v4.119L3 2.5v11l8-4.619V13h2V3z')
+            button.w-8.h-8.rounded-full.grid
+              svg.place-self-center.Svg-ulyrgf-0.hJgLcF(
+                role='img',
+                height='16',
+                width='16',
+                viewbox='0 0 16 16'
+              )
+                path(
+                  d='M5.5 5H10v1.5l3.5-2-3.5-2V4H5.5C3 4 1 6 1 8.5c0 .6.1 1.2.4 1.8l.9-.5C2.1 9.4 2 9 2 8.5 2 6.6 3.6 5 5.5 5zm9.1 1.7l-.9.5c.2.4.3.8.3 1.3 0 1.9-1.6 3.5-3.5 3.5H6v-1.5l-3.5 2 3.5 2V13h4.5C13 13 15 11 15 8.5c0-.6-.1-1.2-.4-1.8z'
+                )
+          .player__timer-slider.flex.items-center.w-full
+            span.player__current-time.text-xs.text-white.w-10.h-4.text-center 0:00
+            input.w-full(type='range', name='', value='0.5')
+            span.player__total-time.text-xs.text-white.w-10.h-4.text-center 3:24
         .player__right.flex.items-center.justify-end.text-white
           .player__letter
             svg.Svg-ulyrgf-0.hJgLcF(

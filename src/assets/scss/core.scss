@@ -27,7 +27,7 @@
 }
 
 [class*='spoticon-']::before {
-  font-family: 'glue1-spoticon';
+  font-family: 'glue1-spoticon', sans-serif;
   font-style: normal;
   font-weight: 400;
 }
@@ -149,13 +149,13 @@ body {
 .player {
   min-height: remsize(90);
 
+  &__thumb {
+    width: remsize(56);
+    height: remsize(56);
+  }
+
   &__left {
     width: 30%;
-
-    &__thumb {
-      width: remsize(56);
-      height: remsize(56);
-    }
   }
 
   &__center {

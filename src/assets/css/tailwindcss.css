@@ -10,6 +10,9 @@
   .sidebar__fixed {
     @apply flex flex-col pt-5;
   }
+  .sidebar__app {
+    @apply text-white px-6 text-sm leading-10 font-bold flex items-center;
+  }
   .sidebar__item {
     @apply flex items-center px-6 h-10 leading-10 text-sm font-bold cursor-pointer;
   }
@@ -21,5 +24,14 @@
   }
   .playlists__item {
     @apply px-6 py-2 leading-10 flex items-center h-10.5;
+  }
+  .menu {
+    @apply flex justify-between row-span-1 col-span-1 bg-gray-400;
+  }
+  .content {
+    @apply row-span-1 col-span-1 bg-gray-800 overflow-auto;
+  }
+  .player {
+    @apply flex row-span-1 col-span-2 bg-gray-600 px-4 items-center;
   }
 }
