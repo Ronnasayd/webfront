@@ -4,7 +4,22 @@
 @tailwind utilities;
 
 @layer components {
+  .sidebar {
+    @apply row-span-2 col-span-1 bg-gray-500;
+  }
+  .sidebar__fixed {
+    @apply flex flex-col pt-5;
+  }
   .sidebar__item {
-    @apply flex items-center px-6 h-10 leading-10 text-sm font-bold;
+    @apply flex items-center px-6 h-10 leading-10 text-sm font-bold cursor-pointer;
+  }
+  .playlists {
+    @apply text-white pl-6 text-xs font-bold mt-6 mb-3 tracking-widest;
+  }
+  .playlists__menu {
+    @apply text-white mb-2;
+  }
+  .playlists__item {
+    @apply px-6 py-2 leading-10 flex items-center h-10.5;
   }
 }

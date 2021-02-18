@@ -6,29 +6,29 @@ html(lang='Pt-br')
     title Spotify Clone
   body
     .grid.h-screen.wrapper
-      section.sidebar.row-span-2.col-span-1.bg-gray-500
-        .sidebar__fixed.flex.flex-col.pt-5
+      section.sidebar
+        .sidebar__fixed
           img.logo.mx-5.mb-6(src='../assets/images/logo.svg')
           ul.text-white
-            li.sidebar__item.cursor-pointer
+            li.sidebar__item
               img.mr-5(src='../assets/images/home.svg')
               p Início
-            li.sidebar__item.cursor-pointer
+            li.sidebar__item
               img.mr-5(src='../assets/images/search.svg')
               p Buscar
-            li.sidebar__item.cursor-pointer
+            li.sidebar__item
               img.mr-5(src='../assets/images/library.svg')
               p Sua Biblioteca
-          h1.text-white.pl-6.text-xs.font-bold.mt-6.mb-3.tracking-widest PLAYLISTS
-          ul.text-white.mb-2
-            li.px-6.py-2.h-11_5.leading-10.flex.items-center
+          h1.playlists PLAYLISTS
+          ul.playlists__menu
+            li.playlists__item
               svg.plus-icon.mr-4(
                 shape-rendering='crispEdges',
                 viewbox='0 0 36 36'
               )
                 path(d='m28 20h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z')
               span.text-sm.font-bold Criar playlist
-            li.px-6.py-2.h-11_5.leading-10.flex.items-center
+            li.playlists__item
               .heart-wrapper.mr-4
                 svg.Svg-ulyrgf-0.hJgLcF(
                   role='img',
@@ -206,9 +206,9 @@ html(lang='Pt-br')
                 path(d='M10 8h4v3h-4z')
         .player__center.flex.justify-center
           .player__controls
-          .player__timer-slider
+          .player__timer-slider.flex.items-center
             span.player__current-time 0:00
-            input(type='range', name='')
+            input.w-84(type='range', name='', value='0.5')
             span.player__total-time 3:24
         .player__right.flex.items-center.justify-end.text-white
           .player__letter
